@@ -48,7 +48,7 @@
          
                   </table>
         </fieldset>
-                 <asp:GridView ID="countryEntryGridView" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="OnPageIndexChanging" PageSize="4">
+                 <asp:GridView ID="countryEntryGridView" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="OnPageIndexChanging" CellPadding="4" PageSize="4">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
                     <ItemTemplate>
@@ -68,6 +68,7 @@
                     </ItemTemplate>
                      </asp:TemplateField>
                 </Columns>
+                      <PagerSettings Mode="NumericFirstLast" />
                       </asp:GridView>
                  
             
