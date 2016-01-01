@@ -79,8 +79,8 @@ namespace CityCountryInfoManagement.Gateway
             {
                 country = new Country();
                 country.Id = (int) reader["Id"];
-                country.Name = reader["Name"].ToString();
-                country.About = reader["About"].ToString();
+                country.Name = reader["CountryName"].ToString();
+                country.About = reader["CountryAbout"].ToString();
 
              
                 countrylist.Add(country);

@@ -16,13 +16,13 @@ namespace CityCountryInfoManagement.Gateway
         public  int Save(City city)
         {
             connection.ConnectionString = connectionString;
-            string query = "INSERT INTO City VALUES(@Name,@About,@Dwellers,@Location,@Weather,@CountryId)";
+            string query = "INSERT INTO City VALUES(@CityName,@CityAbout,@Dwellers,@Location,@Weather,@CountryId)";
             SqlCommand Command = new SqlCommand(query,connection);
             Command.Parameters.Clear();
-            Command.Parameters.Add("Name", SqlDbType.VarChar);
-            Command.Parameters["Name"].Value = city.Name;
-            Command.Parameters.Add("About", SqlDbType.VarChar);
-            Command.Parameters["About"].Value = city.About;
+            Command.Parameters.Add("CityName", SqlDbType.VarChar);
+            Command.Parameters["CityName"].Value = city.Name;
+            Command.Parameters.Add("CityAbout", SqlDbType.VarChar);
+            Command.Parameters["CityAbout"].Value = city.About;
             Command.Parameters.Add("Dwellers", SqlDbType.BigInt);
             Command.Parameters["Dwellers"].Value = city.Dwellers;
             Command.Parameters.Add("Location", SqlDbType.VarChar);
@@ -39,7 +39,7 @@ namespace CityCountryInfoManagement.Gateway
 
         public  bool IsCityExists(City city)
         {
-            string query = "SELECT * FROM City WHERE Name = '" + city.Name+"'" ;
+            string query = "SELECT * FROM City WHERE CityName = '" + city.Name+"'" ;
 
 
             connection.ConnectionString = connectionString;
@@ -80,9 +80,9 @@ namespace CityCountryInfoManagement.Gateway
             {
                 city = new City();
                 city.Id = (int)reader["Id"];
-                city.Name = reader["Name"].ToString();
+                city.Name = reader["CityName"].ToString();
                 
-                city.About = reader["About"].ToString();
+                city.About = reader["CityAbout"].ToString();
                 city.Dwellers = Convert.ToInt32(reader["Dwellers"]);
                 city.Location = reader["Location"].ToString();
                 city.Weather = reader["Weather"].ToString();
