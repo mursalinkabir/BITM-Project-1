@@ -67,13 +67,13 @@ namespace CityCountryInfoManagement.UI {
         protected global::System.Web.UI.WebControls.TextBox WeatherTextBox;
         
         /// <summary>
-        /// cityCountryId control.
+        /// cityCountryDropdownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cityCountryId;
+        protected global::System.Web.UI.WebControls.DropDownList cityCountryDropdownList;
         
         /// <summary>
         /// cityEntrySaveButton control.
@@ -94,13 +94,13 @@ namespace CityCountryInfoManagement.UI {
         protected global::System.Web.UI.WebControls.Button cityEntryButton;
         
         /// <summary>
-        /// Label1 control.
+        /// CitymessageLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label CitymessageLabel;
         
         /// <summary>
         /// cityEntryGridView control.

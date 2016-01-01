@@ -9,7 +9,7 @@ namespace CityCountryInfoManagement.BLL
 {
     public class CountryManager
     {
-        static CountryGateway countryGateway=new CountryGateway();
+         CountryGateway countryGateway=new CountryGateway();
         public string save(Country country)
         {
             if (!countryGateway.IsCountryExists(country))
@@ -35,7 +35,7 @@ namespace CityCountryInfoManagement.BLL
         //    return countryGateway.GetByCountryName(searchName);
         //}
 
-        public static List<Country> LoadAllCountry()
+        public  List<Country> LoadAllCountry()
         {
             return countryGateway.LoadAllCountry();
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CityEntryUI.aspx.cs" Inherits="CityCountryInfoManagement.UI.CityEntryUI" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CityEntryUI.aspx.cs" Inherits="CityCountryInfoManagement.UI.CityEntryUI" validateRequest=false  %>
 
 <!DOCTYPE html>
 
@@ -38,7 +38,7 @@
           <tr>
             <td>
                 About</td>
-            <td><textarea id="cityEntryAbout" runat="server"></textarea></td>
+            <td><textarea ID="cityEntryAbout" runat="server"></textarea></td>
         </tr>
          <tr>
             <td>
@@ -58,7 +58,7 @@
             <td>
                 Country</td>
             <td>
-                <asp:DropDownList ID="cityCountryId" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="cityCountryDropdownList" runat="server"></asp:DropDownList>
             </td>
         </tr>
 
@@ -69,7 +69,7 @@
                 <asp:Button ID="cityEntrySaveButton" runat="server" Text="Save" OnClick="cityEntrySaveButton_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="cityEntryButton" runat="server" Text="Reset" />
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="CitymessageLabel" runat="server" Text="Label"></asp:Label>
                 <br />
                 <br />
                 <br />
@@ -78,7 +78,7 @@
          
                   </table>
         </fieldset>
-                 <asp:GridView ID="cityEntryGridView" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="OnPageIndexChanging" PageSize="4">
+                 <asp:GridView ID="cityEntryGridView" runat="server" AutoGenerateColumns="False" AllowPaging="true"  PageSize="4">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
                     <ItemTemplate>
@@ -93,13 +93,13 @@
                 </asp:TemplateField>
                     <asp:TemplateField HeaderText="Location">
                     <ItemTemplate>
-                        <asp:HiddenField runat="server" ID="idHiddenField" Value='<%#Eval("Id")%>'/>
+                        
                         <asp:Label runat="server" Text='<%#Eval("Location")%>'></asp:Label>
                     </ItemTemplate>
                      </asp:TemplateField>
                     <asp:TemplateField HeaderText="About">
                     <ItemTemplate>
-                        
+                        <asp:HiddenField runat="server" ID="idHiddenField" Value='<%#Eval("Id")%>'/>
                         <asp:Label runat="server" Text='<%#Eval("About")%>'></asp:Label>
                     </ItemTemplate>
                      </asp:TemplateField>

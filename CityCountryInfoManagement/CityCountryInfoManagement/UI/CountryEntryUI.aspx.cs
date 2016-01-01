@@ -11,14 +11,19 @@ namespace CityCountryInfoManagement.UI
 {
     public partial class CountryEntryUI : System.Web.UI.Page
     {
+        CountryManager countryManager = new CountryManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadAllCountry();
+            
+
         }
+
+  
 
         protected void countryEntrySaveButton_Click(object sender, EventArgs e)
         {
-            CountryManager countryManager = new CountryManager();
+            
             Country country = new Country();
             country.Name = countryEntryNameTextBox.Text;
             country.About = Request.Form["countryEntryAbout"];
@@ -32,7 +37,7 @@ namespace CityCountryInfoManagement.UI
 
         public void LoadAllCountry()
         {
-            countryEntryGridView.DataSource = CountryManager.LoadAllCountry();
+            countryEntryGridView.DataSource = countryManager.LoadAllCountry();
             countryEntryGridView.DataBind();
         }
 
