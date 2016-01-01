@@ -225,6 +225,7 @@
     <Content Include="UI\CityEntryUI.aspx" />
     <Content Include="UI\CountryEntryUI.aspx" />
     <Content Include="UI\CountryViewUI.aspx" />
+    <Content Include="UI\Main Menu.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +257,13 @@
     </Compile>
     <Compile Include="UI\CountryViewUI.aspx.designer.cs">
       <DependentUpon>CountryViewUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Main Menu.aspx.cs">
+      <DependentUpon>Main Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Main Menu.aspx.designer.cs">
+      <DependentUpon>Main Menu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
