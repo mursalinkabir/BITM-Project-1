@@ -42,7 +42,7 @@ namespace CityCountryInfoManagement.UI
             city.Location = cityLocationTextBox.Text;
             city.About = Request.Form["cityEntryAbout"];
             city.Weather = WeatherTextBox.Text;
-            city.Dwellers = CityDwellersTextBox.Text;
+            city.Dwellers = Convert.ToInt32(CityDwellersTextBox.Text);
             city.CountryId = cityCountryDropdownList.SelectedValue;
             CitymessageLabel.Text = cityManager.Save(city);
         }

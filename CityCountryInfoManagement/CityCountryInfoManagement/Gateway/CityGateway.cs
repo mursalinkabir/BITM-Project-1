@@ -83,7 +83,7 @@ namespace CityCountryInfoManagement.Gateway
                 city.Name = reader["Name"].ToString();
                 
                 city.About = reader["About"].ToString();
-                city.Dwellers = reader["Dwellers"].ToString();
+                city.Dwellers = Convert.ToInt32(reader["Dwellers"]);
                 city.Location = reader["Location"].ToString();
                 city.Weather = reader["Weather"].ToString();
                 city.CountryId = reader["CountryId"].ToString();
