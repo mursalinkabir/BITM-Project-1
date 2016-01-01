@@ -39,5 +39,12 @@ namespace CityCountryInfoManagement.BLL
         {
             return countryGateway.LoadAllCountry();
         }
+
+        
+
+        public List<CountryView> GetByCountryName(string searchname)
+        {
+            return countryGateway.GetByCountryName(searchname);
+        }
     }
     }

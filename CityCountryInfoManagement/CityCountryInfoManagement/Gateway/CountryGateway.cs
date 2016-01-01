@@ -18,14 +18,14 @@ namespace CityCountryInfoManagement.Gateway
         {
             connection.ConnectionString = connectionString;
 
-            string query = "INSERT INTO Country  VALUES(@Name,@About)";
+            string query = "INSERT INTO Country  VALUES(@CountryName,@CountryAbout)";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.Clear();
-            command.Parameters.Add("Name", SqlDbType.VarChar);
-            command.Parameters["Name"].Value = country.Name;
-            command.Parameters.Add("About", SqlDbType.VarChar);
-            command.Parameters["About"].Value = country.About;
+            command.Parameters.Add("CountryName", SqlDbType.VarChar);
+            command.Parameters["CountryName"].Value = country.Name;
+            command.Parameters.Add("CountryAbout", SqlDbType.VarChar);
+            command.Parameters["CountryAbout"].Value = country.About;
 
             connection.Open();
             int rowAffected = command.ExecuteNonQuery();
@@ -35,7 +35,7 @@ namespace CityCountryInfoManagement.Gateway
         }  
         public bool IsCountryExists(Country country)
         {
-            string query = "SELECT * FROM Country WHERE Name = '" + country.Name+"'" ;
+            string query = "SELECT * FROM Country WHERE CountryName = '" + country.Name+"'" ;
 
 
             connection.ConnectionString = connectionString;
@@ -58,10 +58,7 @@ namespace CityCountryInfoManagement.Gateway
             return isCountryExist;
         }
 
-        //public List<Country> GetByCountryName(string searchName)
-        //{
-        //    throw new NotImplementedException();
-        //}
+       
 
         public List<Country> LoadAllCountry()
         {
@@ -82,8 +79,8 @@ namespace CityCountryInfoManagement.Gateway
             {
                 country = new Country();
                 country.Id = (int) reader["Id"];
-                country.Name = reader["Name"].ToString();
-                country.About = reader["About"].ToString();
+                country.Name = reader["CountryName"].ToString();
+                country.About = reader["CountryAbout"].ToString();
 
              
                 countrylist.Add(country);
@@ -93,6 +90,40 @@ namespace CityCountryInfoManagement.Gateway
             connection.Close();
 
             return countrylist;
+        }
+
+        public List<CountryView> GetByCountryName(string searchName)
+        {
+            string query = "SELECT * FROM CountryView WHERE CountryName LIKE '%" + searchName + "%'";
+
+            connection.ConnectionString = connectionString;
+            List<CountryView> countryList = new List<CountryView>();
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            CountryView countryView= null;
+
+            while (reader.Read())
+            {
+                countryView=new CountryView();
+                //countryView.Id = (int) reader["id"];
+                countryView.Name = reader["CountryName"].ToString();
+                countryView.About = reader["CountryAbout"].ToString();
+                countryView.NoOfCities = Convert.ToInt32(reader["NoOfCities"].ToString());
+                countryView.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
+                //aBook.Id = (int)reader["id"];
+                //aBook.Isbn = reader["Isbn"].ToString();
+                //aBook.Name = reader["Name"].ToString();
+                //aBook.Author = reader["Author"].ToString();
+
+                countryList.Add(countryView);
+            }
+            reader.Close();
+            connection.Close();
+
+            return countryList;
         }
     }
 }
