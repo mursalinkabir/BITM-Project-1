@@ -14,7 +14,7 @@
         <br />
         <asp:Button ID="countryEntryButton" runat="server" OnClick="countryEntryButton_Click" Text="Country Entry" />
         <br />
-        <asp:Button ID="cityviewButton" runat="server" Text="City View" />
+        <asp:Button ID="cityviewButton" runat="server" Text="City View" OnClick="cityviewButton_Click" />
         <br />
         <asp:Button ID="countryviewButton" runat="server" OnClick="countryviewButton_Click" Text="Country View" />
     

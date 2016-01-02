@@ -223,6 +223,7 @@
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="UI\CityEntryUI.aspx" />
+    <Content Include="UI\CityViewUI.aspx" />
     <Content Include="UI\CountryEntryUI.aspx" />
     <Content Include="UI\CountryViewUI.aspx" />
     <Content Include="UI\Main Menu.aspx" />
@@ -234,6 +235,7 @@
     <Compile Include="Gateway\CityGateway.cs" />
     <Compile Include="Gateway\CountryGateway.cs" />
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\CityView.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -243,6 +245,13 @@
     </Compile>
     <Compile Include="UI\CityEntryUI.aspx.designer.cs">
       <DependentUpon>CityEntryUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CityViewUI.aspx.cs">
+      <DependentUpon>CityViewUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CityViewUI.aspx.designer.cs">
+      <DependentUpon>CityViewUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\CountryEntryUI.aspx.cs">
       <DependentUpon>CountryEntryUI.aspx</DependentUpon>

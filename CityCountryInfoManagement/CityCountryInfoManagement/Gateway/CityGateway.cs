@@ -96,5 +96,142 @@ namespace CityCountryInfoManagement.Gateway
 
             return citylist;
         }
+
+        public List<CityView> GetCityByCityName(string citySearchName)
+        {
+            connection.ConnectionString = connectionString;
+            string query = "SELECT * FROM CityView WHERE (CityName LIKE '%'+@citySearchName+'%')";
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+            
+            command.Parameters.Add("citySearchName", SqlDbType.VarChar);
+            command.Parameters["citySearchName"].Value = citySearchName;
+            List<CityView> cityList = new List<CityView>();
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            CityView cityView = null;
+            while (reader.Read())
+            {
+                cityView = new CityView();
+                cityView.CityName = reader["CityName"].ToString();
+                cityView.CityAbout = reader["CityAbout"].ToString();
+                if (!reader["NoOfDwellers"].Equals(System.DBNull.Value))
+                {
+                    cityView.NoOfDwellers = reader.GetInt64(reader.GetOrdinal("NoOfDwellers"));
+                }
+                else
+                {
+                    cityView.NoOfDwellers = 0;
+                }
+                cityView.Location = reader["Location"].ToString();
+                cityView.Weather = reader["Weather"].ToString();
+                cityView.CountryName = reader["CountryName"].ToString();
+                cityView.CountryAbout = reader["CountryAbout"].ToString();
+                cityList.Add(cityView);
+
+            }
+            reader.Close();
+            connection.Close();
+            return cityList;
+        }
+
+        public List<Country> GetAllCountry()
+        {
+            connection.ConnectionString = connectionString;
+            string query = "SELECT * FROM Country";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            List<Country> countryList = new List<Country>();
+            while (reader.Read())
+            {
+                Country country = new Country();
+
+                country.Name = reader["CountryName"].ToString();
+                country.Id = Int32.Parse(reader["Id"].ToString());
+                countryList.Add(country);
+
+            }
+            reader.Close();
+            connection.Close();
+            return countryList;
+        }
+
+        public List<CityView> GetAllCity()
+        {
+            connection.ConnectionString = connectionString;
+            string query = "SELECT * FROM CityView";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            List<CityView> cityList = new List<CityView>();
+            while (reader.Read())
+            {
+                CityView cityView = new CityView();
+                cityView.CityName = reader["CityName"].ToString();
+                cityView.CityAbout = reader["CityAbout"].ToString();
+                if (!reader["NoOfDwellers"].Equals(System.DBNull.Value))
+                {
+                    cityView.NoOfDwellers = reader.GetInt64(reader.GetOrdinal("NoOfDwellers"));
+                }
+                else
+                {
+                    cityView.NoOfDwellers = 0;
+                }
+
+                cityView.Location = reader["Location"].ToString();
+                cityView.Weather = reader["Weather"].ToString();
+                cityView.CountryName = reader["CountryName"].ToString();
+                cityView.CountryAbout = reader["CountryAbout"].ToString();
+                cityList.Add(cityView);
+
+            }
+            reader.Close();
+            connection.Close();
+            return cityList;
+        }
+
+        public List<CityView> GetCityByCountryName(string countrySearchName)
+        {
+            connection.ConnectionString = connectionString;
+            string query = "SELECT * FROM CityView WHERE (CountryName LIKE '%'+@countrySearchName+'%')";
+
+
+            SqlCommand command = new SqlCommand(query, connection);
+            
+            command.Parameters.Add("countrySearchName", SqlDbType.VarChar);
+            command.Parameters["countrySearchName"].Value = countrySearchName;
+            
+            List<CityView> cityList = new List<CityView>();
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            CityView cityView = null;
+            while (reader.Read())
+            {
+                cityView = new CityView();
+                cityView.CityName = reader["CityName"].ToString();
+                cityView.CityAbout = reader["CityAbout"].ToString();
+                if (!reader["NoOfDwellers"].Equals(System.DBNull.Value))
+                {
+                    cityView.NoOfDwellers = reader.GetInt64(reader.GetOrdinal("NoOfDwellers"));
+                }
+                else
+                {
+                    cityView.NoOfDwellers = 0;
+                }
+
+
+                cityView.Location = reader["Location"].ToString();
+                cityView.Weather = reader["Weather"].ToString();
+                cityView.CountryName = reader["CountryName"].ToString();
+                cityView.CountryAbout = reader["CountryAbout"].ToString();
+                cityList.Add(cityView);
+
+            }
+            reader.Close();
+            connection.Close();
+            return cityList;
+        }
     }
 }

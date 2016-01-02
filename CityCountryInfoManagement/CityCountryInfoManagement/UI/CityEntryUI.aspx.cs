@@ -28,6 +28,12 @@ namespace CityCountryInfoManagement.UI
         private void LoadAllCountries()
         {
             List<Country> countries = countryManager.LoadAllCountry();
+            Country deafultCountry = new Country();
+
+            deafultCountry.Id = -1;
+            deafultCountry.Name = "Select...";
+
+            countries.Insert(0, deafultCountry);
             cityCountryDropdownList.DataSource = countries;
             cityCountryDropdownList.DataTextField = "Name";
             cityCountryDropdownList.DataValueField = "Id";

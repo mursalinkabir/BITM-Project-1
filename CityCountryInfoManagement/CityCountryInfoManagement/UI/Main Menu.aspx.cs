@@ -28,5 +28,10 @@ namespace CityCountryInfoManagement.UI
         {
             Response.Redirect("CountryViewUI.aspx");
         }
+
+        protected void cityviewButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CityViewUI.aspx");
+        }
     }
 }
