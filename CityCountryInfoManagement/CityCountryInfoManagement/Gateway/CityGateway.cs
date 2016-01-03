@@ -39,7 +39,7 @@ namespace CityCountryInfoManagement.Gateway
 
         public  bool IsCityExists(City city)
         {
-            string query = "SELECT * FROM City WHERE CityName = '" + city.Name+"'" ;
+            string query = "SELECT * FROM City WHERE (CityName = @Name)" ;
 
 
             connection.ConnectionString = connectionString;
@@ -47,7 +47,8 @@ namespace CityCountryInfoManagement.Gateway
             SqlCommand command = new SqlCommand();
             command.CommandText = query;
             command.Connection = connection;
-
+            command.Parameters.Add("Name", SqlDbType.VarChar);
+            command.Parameters["Name"].Value = city.Name;
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
 
