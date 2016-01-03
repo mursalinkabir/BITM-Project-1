@@ -27,12 +27,10 @@ namespace CityCountryInfoManagement.UI
             Country country = new Country();
             country.Name = countryEntryNameTextBox.Text;
             country.About = Request.Form["countryEntryAbout"];
-            //showCountry.InnerHtml = country.About;
+            
             Label1.Text = countryManager.save(country);
+            LoadAllCountry();
 
-            //article.Description = Request.Form["edit"];
-            //showArticle.InnerHtml = article.Description;
-            //manager.Save(article);
         }
 
         public void LoadAllCountry()

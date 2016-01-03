@@ -15,8 +15,12 @@ namespace CityCountryInfoManagement.UI
         CountryManager countryManager = new CountryManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadAllCountries();
-            LoadAllCities();
+            if (!IsPostBack)
+            {
+                LoadAllCountries();
+                LoadAllCities();
+            }
+           
         }
 
         private void LoadAllCities()

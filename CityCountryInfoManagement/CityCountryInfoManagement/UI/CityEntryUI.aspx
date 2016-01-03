@@ -14,12 +14,13 @@
             width: 100%;
         }
     </style>
+    <link href="../CSS/style.css" rel="stylesheet" />
 
 </head>
 <body>
     
     <form id="form1" runat="server">
-    <fieldset style="height: 259px"><legend>City Entry</legend>
+    <fieldset style="height: 500px; background-color: #f79365;"><legend>City Entry</legend>
      <table class="auto-style1">
         <tr>
             <td>
@@ -38,7 +39,7 @@
           <tr>
             <td>
                 About</td>
-            <td><textarea ID="cityEntryAbout" runat="server"></textarea></td>
+            <td><textarea class="textareasize" ID="cityEntryAbout" runat="server"></textarea></td>
         </tr>
          <tr>
             <td>
@@ -137,7 +138,11 @@
     <script src="../froala_editor_1.2.7/js/plugins/video.min.js"></script>
         <script>
             $(function () {
-                $('#cityEntryAbout').editable({ inlineMode: false, alwaysBlank: true })
+                $('#cityEntryAbout').editable({
+                    inlineMode: false,
+                    alwaysBlank: true,
+                    height: 150
+                })
             });
   </script>
 </body>

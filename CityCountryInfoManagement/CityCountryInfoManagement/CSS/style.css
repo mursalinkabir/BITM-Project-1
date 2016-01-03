@@ -1,6 +1,5 @@
 ﻿body {
-    background-color: #DDFFDD;
-
+    background-color: #FDF3E7;
 }
 
 .headertext {
@@ -57,4 +56,8 @@
     background-color: #2097D4;
     line-height: 9.9em;
     font-size: 33px;
+}
+.textareasize {
+    width: 300px;
+    height: 150px;
 }
