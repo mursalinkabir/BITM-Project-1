@@ -276,3 +276,5 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+CityCountryInfoManagement/CityCountryInfoManagement/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+CityCountryInfoManagement/CityCountryInfoManagement.v12.suo
