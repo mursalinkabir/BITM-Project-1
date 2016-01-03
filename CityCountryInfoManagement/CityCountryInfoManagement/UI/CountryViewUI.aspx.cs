@@ -16,9 +16,15 @@ namespace CityCountryInfoManagement.UI
         {
             if (!IsPostBack)
             {
-                ShowCountry(searchName);
+                //countryManager.LoadAllCountry();
+                GetCountry();
             }
             
+        }
+        private void GetCountry()
+        {
+            countryViewGridView.DataSource = countryManager.GetAllCountry();
+           countryViewGridView.DataBind();
         }
 
        
@@ -53,16 +59,17 @@ namespace CityCountryInfoManagement.UI
 
         }
 
-        private void ShowCountry(string searchName)
+        private void ShowCountry(string countrySearchName)
         {
-            countryViewGridView.DataSource = countryManager.GetByCountryName(searchName);
+            countryViewGridView.DataSource = countryManager.GetByCountryName(countrySearchName);
             countryViewGridView.DataBind();
         }
 
         protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             countryViewGridView.PageIndex = e.NewPageIndex;
-            ShowCountry(searchName);
+            
+            countryManager.LoadAllCountry();
         }
     }
        
