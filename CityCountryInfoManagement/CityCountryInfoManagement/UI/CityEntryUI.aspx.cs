@@ -11,8 +11,9 @@ namespace CityCountryInfoManagement.UI
 {
     public partial class CityEntryUI : System.Web.UI.Page
     {
-        CityManager cityManager = new CityManager();
-        CountryManager countryManager = new CountryManager();
+        private CityManager cityManager = new CityManager();
+        private CountryManager countryManager = new CountryManager();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,7 +21,7 @@ namespace CityCountryInfoManagement.UI
                 LoadAllCountries();
                 LoadAllCities();
             }
-           
+
         }
 
         private void LoadAllCities()
@@ -46,7 +47,7 @@ namespace CityCountryInfoManagement.UI
 
         protected void cityEntrySaveButton_Click(object sender, EventArgs e)
         {
-           
+
             City city = new City();
             city.Name = cityEntryNameTextBox.Text;
             city.Location = cityLocationTextBox.Text;
@@ -56,6 +57,12 @@ namespace CityCountryInfoManagement.UI
             city.CountryId = cityCountryDropdownList.SelectedValue;
             CitymessageLabel.Text = cityManager.Save(city);
             LoadAllCountries();
+            LoadAllCities();
+        }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            cityEntryGridView.PageIndex = e.NewPageIndex;
             LoadAllCities();
         }
     }

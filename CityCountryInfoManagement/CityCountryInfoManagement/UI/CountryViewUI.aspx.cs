@@ -14,7 +14,11 @@ namespace CityCountryInfoManagement.UI
         private string searchName;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShowCountry(searchName);
+            if (!IsPostBack)
+            {
+                ShowCountry(searchName);
+            }
+            
         }
 
        
@@ -58,6 +62,7 @@ namespace CityCountryInfoManagement.UI
         protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             countryViewGridView.PageIndex = e.NewPageIndex;
+            ShowCountry(searchName);
         }
     }
        

@@ -14,7 +14,13 @@ namespace CityCountryInfoManagement.UI
         CountryManager countryManager = new CountryManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadAllCountry();
+            if (!IsPostBack)
+            {
+                LoadAllCountry();
+            }
+                
+          
+            
             
 
         }
@@ -42,6 +48,7 @@ namespace CityCountryInfoManagement.UI
         protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             countryEntryGridView.PageIndex = e.NewPageIndex;
+            LoadAllCountry();
         }
     }
 }

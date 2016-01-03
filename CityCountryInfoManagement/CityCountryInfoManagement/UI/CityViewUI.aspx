@@ -33,7 +33,7 @@
                 </table>
                 
             </fieldset>
-            <asp:GridView ID="cityGridView" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="cityGridView" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="OnPageIndexChanging" CellPadding="4" PageSize="4">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
                     <ItemTemplate>

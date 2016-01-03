@@ -91,5 +91,11 @@ namespace CityCountryInfoManagement.UI
             }
            
         }
+
+        protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            cityGridView.PageIndex = e.NewPageIndex;
+            GetCity();
+        }
     }
 }
