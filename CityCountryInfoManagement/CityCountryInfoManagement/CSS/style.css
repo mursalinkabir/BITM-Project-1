@@ -88,7 +88,16 @@
     font-size: 16px;
     line-height: 1.8em;
     text-align: center;
-    background-color: #C6DB74;
+    box-shadow: 0px 1px 2px #777;
  
     color: white;
+}
+.button-form:hover {
+    background-color: #5C5C50;
+}
+.form-button-color1 {
+    background-color: #16A086;
+}
+.form-button-color2 {
+    background-color: #2097D4;
 }

@@ -68,11 +68,13 @@
             <td>&nbsp;</td>
             <td>
                 <%--<asp:Button ID="cityEntrySaveButton" runat="server" Text="Save" OnClick="cityEntrySaveButton_Click" />--%>
-                <asp:LinkButton ID="cityEntrySaveButton" runat="server" OnClick="cityEntrySaveButton_Click" ><i class="fa fa-flag-o button-form"> Save</i>
+                <asp:LinkButton ID="cityEntrySaveButton" runat="server" OnClick="cityEntrySaveButton_Click" ><i class="fa fa-floppy-o button-form form-button-color1"> Save</i>
 </asp:LinkButton>
 &nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="cityEntryButton" runat="server" Text="Reset" />
-                <asp:Label ID="CitymessageLabel" runat="server" Text="Label"></asp:Label>
+                <%--<asp:Button ID="cityEntryButton" runat="server" Text="Reset" />--%>
+                <asp:LinkButton ID="cityEntryButton" runat="server" OnClick="cancelbutton_Click" ><i class="fa fa-ban button-form form-button-color2"> Cancel</i>
+</asp:LinkButton>
+                <asp:Label ID="CitymessageLabel" runat="server" Text=""></asp:Label>
                 <br />
                 <br />
                 <br />
@@ -81,7 +83,7 @@
          
                   </table>
         </fieldset>
-                 <asp:GridView ID="cityEntryGridView" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="OnPageIndexChanging" PageSize="4">
+                 <asp:GridView ID="cityEntryGridView" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="OnPageIndexChanging" PageSize="4" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
                 <Columns>
                     <asp:TemplateField HeaderText="SL#">
                     <ItemTemplate>
@@ -119,6 +121,15 @@
                     </ItemTemplate>
                      </asp:TemplateField>
                 </Columns>
+                      <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                     <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                     <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                     <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                     <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                     <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                     <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                     <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                     <SortedDescendingHeaderStyle BackColor="#93451F" />
                       </asp:GridView>
                  
             
