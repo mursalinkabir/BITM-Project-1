@@ -64,7 +64,7 @@ namespace CityCountryInfoManagement.Gateway
 
         public List<City> LoadAllCities()
         {
-            string query = "SELECT * FROM City ";
+            string query = "SELECT * FROM City ORDER BY CityName";
 
             connection.ConnectionString = connectionString;
             List<City> citylist = new List<City>();

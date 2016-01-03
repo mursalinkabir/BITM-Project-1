@@ -63,7 +63,7 @@ namespace CityCountryInfoManagement.Gateway
         public List<Country> LoadAllCountry()
         {
 
-            string query = "SELECT * FROM Country ";
+            string query = "SELECT * FROM Country ORDER BY CountryName ";
 
             connection.ConnectionString = connectionString;
             List<Country> countrylist = new List<Country>();

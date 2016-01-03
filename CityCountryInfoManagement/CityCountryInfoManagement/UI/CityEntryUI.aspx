@@ -67,7 +67,9 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="cityEntrySaveButton" runat="server" Text="Save" OnClick="cityEntrySaveButton_Click" />
+                <%--<asp:Button ID="cityEntrySaveButton" runat="server" Text="Save" OnClick="cityEntrySaveButton_Click" />--%>
+                <asp:LinkButton ID="cityEntrySaveButton" runat="server" OnClick="cityEntrySaveButton_Click" ><i class="fa fa-flag-o button-form"> Save</i>
+</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="cityEntryButton" runat="server" Text="Reset" />
                 <asp:Label ID="CitymessageLabel" runat="server" Text="Label"></asp:Label>
