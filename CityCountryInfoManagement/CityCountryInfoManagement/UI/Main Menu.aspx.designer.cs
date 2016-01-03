@@ -28,7 +28,7 @@ namespace CityCountryInfoManagement.UI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cityEntryButton;
+        protected global::System.Web.UI.WebControls.LinkButton cityEntryButton;
         
         /// <summary>
         /// countryEntryButton control.
@@ -37,7 +37,7 @@ namespace CityCountryInfoManagement.UI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button countryEntryButton;
+        protected global::System.Web.UI.WebControls.LinkButton countryEntryButton;
         
         /// <summary>
         /// cityviewButton control.
@@ -46,7 +46,7 @@ namespace CityCountryInfoManagement.UI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cityviewButton;
+        protected global::System.Web.UI.WebControls.LinkButton cityviewButton;
         
         /// <summary>
         /// countryviewButton control.
@@ -55,6 +55,6 @@ namespace CityCountryInfoManagement.UI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button countryviewButton;
+        protected global::System.Web.UI.WebControls.LinkButton countryviewButton;
     }
 }

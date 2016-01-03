@@ -51,6 +51,8 @@ namespace CityCountryInfoManagement.UI
             city.Dwellers = Convert.ToInt32(CityDwellersTextBox.Text);
             city.CountryId = cityCountryDropdownList.SelectedValue;
             CitymessageLabel.Text = cityManager.Save(city);
+            LoadAllCountries();
+            LoadAllCities();
         }
     }
 }

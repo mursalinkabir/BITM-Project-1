@@ -11,6 +11,6 @@ namespace CityCountryInfoManagement.Models
         public string Name { get; set; }
         public string About { get; set; }
         public int NoOfCities { get; set; }
-        public int NoOfDwellers { get; set; }
+        public long NoOfDwellers { get; set; }
     }
 }

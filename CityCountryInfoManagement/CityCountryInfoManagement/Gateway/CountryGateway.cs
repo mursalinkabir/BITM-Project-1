@@ -13,7 +13,7 @@ namespace CityCountryInfoManagement.Gateway
     {
         SqlConnection connection = new SqlConnection();
         string connectionString = WebConfigurationManager.ConnectionStrings["CountryDBConnString"].ConnectionString;
-     
+
         public int Save(Country country)
         {
             connection.ConnectionString = connectionString;
@@ -32,10 +32,10 @@ namespace CityCountryInfoManagement.Gateway
             connection.Close();
             return rowAffected;
 
-        }  
+        }
         public bool IsCountryExists(Country country)
         {
-            string query = "SELECT * FROM Country WHERE CountryName = '" + country.Name+"'" ;
+            string query = "SELECT * FROM Country WHERE CountryName = '" + country.Name + "'";
 
 
             connection.ConnectionString = connectionString;
@@ -58,7 +58,7 @@ namespace CityCountryInfoManagement.Gateway
             return isCountryExist;
         }
 
-       
+
 
         public List<Country> LoadAllCountry()
         {
@@ -78,13 +78,13 @@ namespace CityCountryInfoManagement.Gateway
             while (reader.Read())
             {
                 country = new Country();
-                country.Id = (int) reader["Id"];
+                country.Id = (int)reader["Id"];
                 country.Name = reader["CountryName"].ToString();
                 country.About = reader["CountryAbout"].ToString();
 
-             
+
                 countrylist.Add(country);
-               
+
             }
             reader.Close();
             connection.Close();
@@ -103,19 +103,26 @@ namespace CityCountryInfoManagement.Gateway
 
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
-            CountryView countryView= null;
-
+            CountryView countryView = null;
             while (reader.Read())
             {
-                countryView=new CountryView();
+                countryView = new CountryView();
                 //countryView.Id = (int) reader["id"];
                 countryView.Name = reader["CountryName"].ToString();
                 countryView.About = reader["CountryAbout"].ToString();
                 countryView.NoOfCities = Convert.ToInt32(reader["NoOfCities"].ToString());
-                countryView.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
+                if (!reader["NoOfDwellers"].Equals(System.DBNull.Value))
+                {
+                    countryView.NoOfDwellers = reader.GetInt64(reader.GetOrdinal("NoOfDwellers"));
+                }
+                else
+                {
+                    countryView.NoOfDwellers = 0;
+                }
+
                 //aBook.Id = (int)reader["id"];
                 //aBook.Isbn = reader["Isbn"].ToString();
-                //aBook.Name = reader["Name"].ToString();
+                //aBook.CountryName = reader["CountryName"].ToString();
                 //aBook.Author = reader["Author"].ToString();
 
                 countryList.Add(countryView);
