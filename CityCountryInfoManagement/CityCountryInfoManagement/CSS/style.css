@@ -1,5 +1,7 @@
 ﻿body {
     background-color: #FDF3E7;
+    background-image: url("halftone.png");
+    background-repeat: repeat-x;
 }
 
 .headertext {
@@ -57,7 +59,25 @@
     line-height: 9.9em;
     font-size: 33px;
 }
-.textareasize {
+.textareasize{
     width: 300px;
     height: 150px;
+    
+}
+.textboxstyle {
+    margin-top: 10px;
+     -moz-box-shadow: 0 0 20px #333;
+    -webkit-box-shadow: 0 0 20px #333;
+    box-shadow: 0px 1px 2px #777;
+}
+.whitetext {
+    color: whitesmoke;
+    font-size: 18px;
+    padding-top: 5px;
+    text-shadow: 0px 0px 3px rgba(150, 150, 150, 0.93);
+}
+.fieldsetstyle {
+    height: 450px;
+     background-color: #f79365;
+    color: gray;
 }

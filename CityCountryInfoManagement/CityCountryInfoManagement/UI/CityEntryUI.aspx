@@ -20,46 +20,46 @@
 <body>
     
     <form id="form1" runat="server">
-    <fieldset style="height: 500px; background-color: #f79365;"><legend>City Entry</legend>
+    <fieldset class="fieldsetstyle"><legend>City Entry</legend>
      <table class="auto-style1">
         <tr>
             <td>
-                Name</td>
+               <span class="whitetext">Name</span> </td>
             <td>
-                <asp:TextBox ID="cityEntryNameTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="textboxstyle" ID="cityEntryNameTextBox" runat="server"></asp:TextBox>
             </td>
         </tr>
          <tr>
             <td>
-                Location</td>
+              <span class="whitetext">Location</span></td>
             <td>
-                <asp:TextBox ID="cityLocationTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="textboxstyle" ID="cityLocationTextBox" runat="server"></asp:TextBox>
             </td>
         </tr>
           <tr>
             <td>
-                About</td>
+                <span class="whitetext">About</span></td>
             <td><textarea class="textareasize" ID="cityEntryAbout" runat="server"></textarea></td>
         </tr>
          <tr>
             <td>
-                Dwellers</td>
+                <span class="whitetext">Dwellers</span></td>
             <td>
-                <asp:TextBox ID="CityDwellersTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="textboxstyle" ID="CityDwellersTextBox" runat="server"></asp:TextBox>
             </td>
         </tr>
          <tr>
             <td>
-                Weather</td>
+                <span class="whitetext">Weather</span></td>
             <td>
-                <asp:TextBox ID="WeatherTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox CssClass="textboxstyle" ID="WeatherTextBox" runat="server"></asp:TextBox>
             </td>
         </tr>
            <tr>
             <td>
-                Country</td>
+                <span class="whitetext">Country</span></td>
             <td>
-                <asp:DropDownList ID="cityCountryDropdownList" runat="server"></asp:DropDownList>
+                <asp:DropDownList CssClass="textboxstyle" ID="cityCountryDropdownList" runat="server"></asp:DropDownList>
             </td>
         </tr>
 
