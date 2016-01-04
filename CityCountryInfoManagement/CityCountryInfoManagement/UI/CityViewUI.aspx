@@ -27,7 +27,6 @@
                         </td><td class="auto-style1">
                             <asp:TextBox ID="cityNameTextBox" CssClass="textboxstyle" runat="server" Height="22px"></asp:TextBox>
                             <br />
-                            <br />
                             <asp:DropDownList ID="countryDropDownList" CssClass="textboxstyle" runat="server">
                             </asp:DropDownList>
                             <asp:Label ID="messageLabel" runat="server"></asp:Label>

@@ -85,6 +85,7 @@
     height: 100px;
      background-color: #f79365;
     color: gray;
+    width: 1050px;
 }
 .fieldsetstyle3 {
     height: 325px;
@@ -136,7 +137,16 @@ width: 905px;Height : 323px;
 margin-right: 0px;
 width: 905px;Height : 323px;
     margin-right: 0px;
-     Width: 1079px;
+     Width: 1076px;
+
+    
+}
+.gridviewstyle4 {
+      height: 323px;
+margin-right: 0px;
+width: 905px;Height : 323px;
+    margin-right: 0px;
+     Width: 1076px;
 
     
 }
