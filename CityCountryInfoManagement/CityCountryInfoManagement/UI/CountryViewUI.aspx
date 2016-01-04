@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link href="../Content/font-awesome.css" rel="stylesheet" />
+    <link href="../CSS/style.css" rel="stylesheet" />
+    <title>Country View</title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -16,7 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <fieldset><legend>Search criteria</legend>
+    <fieldset class="fieldsetstyle2"><legend>Search criteria</legend>
 
         <table class="auto-style1">
             <tr>
@@ -24,7 +26,7 @@
                 <td>
                     <asp:TextBox ID="countryViewSearchTextBox" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="countryViewSearchButton" runat="server" Text="Search" OnClick="countryViewSearchButton_Click" />
+                    <asp:Button ID="countryViewSearchButton"  runat="server" Text="Search" OnClick="countryViewSearchButton_Click" />
                 &nbsp;&nbsp;&nbsp;
                     <asp:Label ID="countryViewMeassageLabel" runat="server"></asp:Label>
                 </td>

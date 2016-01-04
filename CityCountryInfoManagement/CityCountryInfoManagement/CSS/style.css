@@ -81,6 +81,17 @@
      background-color: #f79365;
     color: gray;
 }
+.fieldsetstyle2 {
+    height: 100px;
+     background-color: #f79365;
+    color: gray;
+}
+.fieldsetstyle3 {
+    height: 325px;
+     background-color: #f79365;
+    color: gray;
+    width: 879px;
+}
 .button-form {
      text-decoration: none;
     width: 100px;
@@ -100,4 +111,35 @@
 }
 .form-button-color2 {
     background-color: #2097D4;
+}
+.rowfont {
+    text-align: center;
+}
+.gridviewstyle {
+    height: 323px;
+margin-right: 0px;
+width: 905px;Height : 323px;
+    margin-right: 0px;
+     Width: 905px;
+}
+.gridviewstyle2 {
+      height: 323px;
+margin-right: 0px;
+width: 905px;Height : 323px;
+    margin-right: 0px;
+     Width: 1106px;
+
+    
+}
+.gridviewstyle3 {
+      height: 323px;
+margin-right: 0px;
+width: 905px;Height : 323px;
+    margin-right: 0px;
+     Width: 1079px;
+
+    
+}
+.rowfont {
+    text-align: center;
 }

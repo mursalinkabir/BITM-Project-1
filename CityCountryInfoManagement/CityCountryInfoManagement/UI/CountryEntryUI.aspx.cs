@@ -50,5 +50,10 @@ namespace CityCountryInfoManagement.UI
             countryEntryGridView.PageIndex = e.NewPageIndex;
             LoadAllCountry();
         }
+
+        protected void cancelbutton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Main Menu.aspx");
+        }
     }
 }
